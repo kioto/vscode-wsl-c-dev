@@ -2,9 +2,9 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: g++ build and debug active file",
-            "command": "/usr/bin/make",
-            "args": ["all"],
+            "label": "debug-build",
+            "command": "ninja",
+            "args": ["-v"],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -14,8 +14,21 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "ninja clean",
+            "command": "ninja",
+            "args": ["-t", "clean"],
+            "options": {
+                "cwd": "${workspaceFolder}"
             },
-            "detail": "デバッガーによって生成されたタスク。"
+            "problemMatcher": [],
+            "group": {
+                "kind": "clean",
+                "isDefault": true
+            }
         }
     ],
     "version": "2.0.0"
