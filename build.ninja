@@ -1,0 +1,13 @@
+cc = gcc
+ld = gcc
+cflags = -g -Wall
+ldflags = -lz
+
+rule obj
+  command = $cc $cflags -c $in -o $out
+
+rule app
+  command = $ld $in -o $out $ldflags
+
+build main.o: obj main.c
+build zlib-sample: app main.o
