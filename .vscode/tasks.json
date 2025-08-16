@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "C/C++: g++ build and debug active file",
+            "label": "debug-build",
             "command": "ninja",
             "args": ["-v"],
             "options": {
@@ -13,6 +13,20 @@
             ],
             "group": {
                 "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "ninja clean",
+            "command": "ninja",
+            "args": ["-t", "clean"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "clean",
                 "isDefault": true
             }
         }
